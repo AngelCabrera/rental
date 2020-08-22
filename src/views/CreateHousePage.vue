@@ -103,7 +103,9 @@ export default {
   },
   methods: {
     save() {
-      const { title, description, featuredImage, services } = this.publication;
+      const {
+        title, description, featuredImage, services,
+      } = this.publication;
       const room = {
         title,
         description,

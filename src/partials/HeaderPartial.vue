@@ -7,7 +7,7 @@
             class="text-black hover:text-grey-darkest no-underline font-semibold text-lg"
             to="/"
           >
-            Olimpoo Rooms
+            Getaround
           </router-link>
         </div>
         <div class="flex items-center w-auto">
@@ -46,10 +46,7 @@
                       <p class="text-grey-dark">Online</p>
                     </div>
                   </div>
-                  <button
-                    class="flex items-center ml-4"
-                    @click.prevent="logout"
-                  >
+                  <button class="flex items-center ml-4" @click.prevent="logout">
                     <i class="material-icons">exit_to_app</i>
                   </button>
                 </div>
@@ -84,22 +81,22 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
-import CurrentUser from '@/components/CurrentUser.vue';
+import { mapMutations } from "vuex";
+import CurrentUser from "@/components/CurrentUser.vue";
 
 export default {
-  name: 'HeaderPartial',
+  name: "HeaderPartial",
   components: { CurrentUser },
   methods: {
     ...mapMutations({
-      showModal: 'SET_MODAL_STATE',
+      showModal: "SET_MODAL_STATE"
     }),
     signUp() {
-      console.log('Sign Up Click');
+      console.log("Sign Up Click");
     },
     logout() {
-      this.$store.dispatch('logout');
-    },
-  },
+      this.$store.dispatch("logout");
+    }
+  }
 };
 </script>
