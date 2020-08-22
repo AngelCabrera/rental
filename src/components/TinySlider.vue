@@ -42,16 +42,16 @@ export default {
   position: relative;
 }
 .tns-controls {
-  position: absolute;
-  top: calc(50% - 3rem);
   color: #fff !important;
-  font-size: 6rem;
-  z-index: 999;
   display: flex;
+  font-size: 6rem;
   justify-content: space-between;
-
   left: 1rem;
+  outline: none !important;
+  position: absolute;
   right: 1rem;
+  top: calc(50% - 3rem);
+  z-index: 999;
 }
 
 .tns-controls button {
