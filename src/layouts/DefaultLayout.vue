@@ -5,7 +5,7 @@
       <div class="container">
         <div class="section__form bg-white p-4 w-1/2 shadow-md rounded-xl">
           <h1 class="mb-2 text-4xl font-light text-grey-darkest">
-            Find homes on Olimpoo Rooms
+            Find homes on Getaround
           </h1>
           <h2 class="mb-6 text-base text-grey-dark font-normal">
             Discover entire homes and private rooms perfect for any trip.
@@ -26,11 +26,7 @@
                 />
               </div>
             </div>
-            <vs-button
-              warn
-              class="general-button w-full"
-              style="--vs-button-margin: 0px;"
-            >
+            <vs-button warn class="general-button w-full" style="--vs-button-margin: 0px;">
               Search
             </vs-button>
           </form>
@@ -131,27 +127,27 @@
 </template>
 
 <script>
-import { mapGetters, mapMutations } from 'vuex';
-import HeaderPartial from '@/partials/HeaderPartial.vue';
-import FooterPartial from '@/partials/FooterPartial.vue';
-import Modal from '@/components/Modal.vue';
-import ToggleInput from '@/components/ToggleInput.vue';
+import { mapGetters, mapMutations } from "vuex";
+import HeaderPartial from "@/partials/HeaderPartial.vue";
+import FooterPartial from "@/partials/FooterPartial.vue";
+import Modal from "@/components/Modal.vue";
+import ToggleInput from "@/components/ToggleInput.vue";
 
 export default {
-  name: 'DefaultLayout',
+  name: "DefaultLayout",
 
   data() {
     return {
       formLogin: {
-        email: '',
-        password: '',
-        rememberMe: false,
+        email: "",
+        password: "",
+        rememberMe: false
       },
       formRegister: {
-        name: '',
-        email: '',
-        password: '',
-      },
+        name: "",
+        email: "",
+        password: ""
+      }
     };
   },
 
@@ -159,40 +155,40 @@ export default {
     HeaderPartial,
     FooterPartial,
     Modal,
-    ToggleInput,
+    ToggleInput
   },
 
   methods: {
     ...mapMutations({
-      closeModal: 'SET_MODAL_STATE',
+      closeModal: "SET_MODAL_STATE"
     }),
     login() {
       this.$store
-        .dispatch('signin', {
+        .dispatch("signin", {
           email: this.formLogin.email,
-          password: this.formLogin.password,
+          password: this.formLogin.password
         })
         .then(() => {
-          this.closeModal({ name: 'login', value: false });
+          this.closeModal({ name: "login", value: false });
         });
     },
     register() {
       this.$store
-        .dispatch('createUser', this.formRegister)
-        .then(() => this.closeModal({ name: 'register', value: false }));
-    },
+        .dispatch("createUser", this.formRegister)
+        .then(() => this.closeModal({ name: "register", value: false }));
+    }
   },
 
   computed: {
-    ...mapGetters(['modals']),
-  },
+    ...mapGetters(["modals"])
+  }
 };
 </script>
 
 <style>
 .section__hero {
   min-height: 450px;
-  background-image: url('https://images.unsplash.com/photo-1504202302068-15fc2055f7f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1330&q=80');
+  background-image: url("https://images.unsplash.com/photo-1504202302068-15fc2055f7f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1330&q=80");
 }
 
 .form__field .input-icon {
